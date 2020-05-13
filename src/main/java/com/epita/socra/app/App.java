@@ -17,7 +17,7 @@ public final class App {
     }
 
     /**
-     * Says hello to the world.
+     * Says hello to the world. This is an added comment for a commit test.
      * 
      * @param args The arguments of the program.
      */
