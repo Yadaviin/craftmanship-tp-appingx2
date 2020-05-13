@@ -1,6 +1,7 @@
 package com.epita.socra.app.tools;
 
 import java.util.Scanner;
+
 /**
  * @author Emmanuel Chaffraix
  */

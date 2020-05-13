@@ -1,6 +1,6 @@
 package com.epita.socra.app;
-import com.epita.socra.app.tools.IOAdapter;
 
+import com.epita.socra.app.tools.IOAdapter;
 import org.junit.Test;
 
 //import static org.junit.Assert.*;

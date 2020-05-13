@@ -1,10 +1,10 @@
 package com.epita.socra.app;
 
-import com.epita.socra.app.tools.IOAdapter;
 import com.epita.socra.app.tools.ConsoleAdapter;
+import com.epita.socra.app.tools.IOAdapter;
 
 /**
- * Hello world!
+ * Hello world.
  */
 public final class App {
     private IOAdapter adapter;
@@ -28,7 +28,7 @@ public final class App {
     }
 
     /**
-     * run the program
+     * run the program.
      */
     public void run() {
         adapter.write("Hello, what's your name ?");
