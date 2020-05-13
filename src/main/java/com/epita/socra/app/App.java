@@ -1,6 +1,7 @@
 package com.epita.socra.app;
 
-import com.epita.socra.app.tools.*;
+import com.epita.socra.app.tools.IOAdapter;
+import com.epita.socra.app.tools.ConsoleAdapter;
 
 /**
  * Hello world!
@@ -18,7 +19,7 @@ public final class App {
 
     /**
      * Says hello to the world. This is an added comment for a commit test.
-     * 
+     *
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
@@ -26,7 +27,10 @@ public final class App {
         application.run();
     }
 
-    public void run(){
+    /**
+     * run the program
+     */
+    public void run() {
         adapter.write("Hello, what's your name ?");
         String name = adapter.read();
         adapter.write("Nice to meet you, " + name + " !");

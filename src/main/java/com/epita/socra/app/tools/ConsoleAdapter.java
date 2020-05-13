@@ -1,7 +1,9 @@
 package com.epita.socra.app.tools;
 
 import java.util.Scanner;
-
+/**
+ * @author Emmanuel Chaffraix
+ */
 public class ConsoleAdapter implements IOAdapter {
 
     private Scanner scan = new Scanner(System.in);
