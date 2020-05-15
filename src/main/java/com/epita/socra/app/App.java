@@ -2,6 +2,7 @@ package com.epita.socra.app;
 
 import com.epita.socra.app.tools.ConsoleAdapter;
 import com.epita.socra.app.tools.IOAdapter;
+import com.epita.socra.app.tools.Translators;
 
 /**
  * Hello world.
@@ -18,7 +19,7 @@ public final class App {
     }
 
     /**
-     * Says hello to the world. This is an added comment for a commit test.
+     * Main function.
      *
      * @param args The arguments of the program.
      */
@@ -28,17 +29,21 @@ public final class App {
     }
 
     /**
-     * run the program.
+     * Runs the program.
+     * User is prompted to enter a argument 
      */
     public void run() {
-        adapter.write("Hello, enter a number.");
-        String number = adapter.read();
-        if(number.chars().allMatch(Character::isDigit) && number != "")  {
-            adapter.write("I");
-        }
-        else {
+        adapter.write("Hello, enter a roman or arabic numeral.");
+        String input = adapter.read();
+
+        if (input == "") {
             adapter.write("You did not enter a number!");
+        } else if (input.chars().allMatch(Character::isDigit)) {
+            adapter.write(Translators.numeralToRoman(Integer.parseInt(input)));
+        } else if (input.chars().allMatch(Character::isAlphabetic)) {
+            adapter.write(String.valueOf(Translators.romanToNumeral(input)));
         }
+
     }
 
 }
