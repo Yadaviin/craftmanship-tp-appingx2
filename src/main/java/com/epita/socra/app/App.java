@@ -33,7 +33,12 @@ public final class App {
     public void run() {
         adapter.write("Hello, enter a number.");
         String number = adapter.read();
-        adapter.write("I");
+        if(number.chars().allMatch(Character::isDigit) && number != "")  {
+            adapter.write("I");
+        }
+        else {
+            adapter.write("You did not enter a number!");
+        }
     }
 
 }

@@ -31,12 +31,36 @@ public class AppTest {
      * Test one to I.
      */
     @Test
-    public void givenI_WhenRunningMain_ThenCheckOuput() {
+    public void given1_WhenRunningMain_ThenCheckOuput() {
         IOAdapter mock = mock(IOAdapter.class);
         when(mock.read()).thenReturn("1");
         App app = new App(mock);
         app.run();
 
         verify(mock).write("I");
+    }
+
+    /**
+     * Manage case when user enters alphabetical characters.
+     */
+    @Test
+    public void givenAlphabeticalChars_WhenRunningMain_ThenCheckOutput() {
+        IOAdapter mock = mock(IOAdapter.class);
+        when(mock.read()).thenReturn("Random text string.");
+        App app = new App(mock);
+        app.run();
+        verify(mock).write("You did not enter a number!");
+    }
+
+    /**
+     * Manage case when user enters nothing.
+     */
+    @Test
+    public void givenNoInput_WhenRunningMain_ThenCheckOutput() {
+        IOAdapter mock = mock(IOAdapter.class);
+        when(mock.read()).thenReturn("");
+        App app = new App(mock);
+        app.run();
+        verify(mock).write("You did not enter a number!");
     }
 }
