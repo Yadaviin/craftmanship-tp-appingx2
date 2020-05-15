@@ -1,6 +1,7 @@
 package com.epita.socra.app.tools;
 
 /**
+ * IOAdapter.
  * @author Emmanuel Chaffraix
  */
 public interface IOAdapter {

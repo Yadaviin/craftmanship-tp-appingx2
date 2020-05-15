@@ -31,8 +31,9 @@ public final class App {
      * run the program.
      */
     public void run() {
-        adapter.write("Hello, what's your name ?");
-        String name = adapter.read();
-        adapter.write("Nice to meet you, " + name + " !");
+        adapter.write("Hello, enter a number.");
+        String number = adapter.read();
+        adapter.write("I");
     }
+
 }
