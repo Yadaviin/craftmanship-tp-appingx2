@@ -44,4 +44,4 @@ mvn -q exec:java -Dexec.mainClass=com.epita.socra.app.App
 * **Emmanuel Chaffraix** - base file structure and main - [EChaffraix](https://github.com/EChaffraix)
 
 ## Acknowledgments
-* **O'Reilly** - Roman numeral strict Regex - [O'Reilly](oreilly.com)
+* **O'Reilly** - Roman numeral strict Regex - [O'Reilly](https://oreilly.com)
