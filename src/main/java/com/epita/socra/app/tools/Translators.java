@@ -1,9 +1,7 @@
 package com.epita.socra.app.tools;
 
-import java.util.Dictionary;
-
 /**
-* this class handles translations
+* this class handles translations.
 *
 */
 public class Translators {

@@ -1,16 +1,18 @@
 package com.epita.socra.app;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import com.epita.socra.app.tools.IOAdapter;
 import com.epita.socra.app.tools.Translators;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Answers.valueOf;
+//import static org.mockito.Answers.valueOf;
 //import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.ArgumentMatchers.argThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+//import static org.mockito.ArgumentMatchers.argThat;
+
 
 /**
  * Unit test for simple App.
