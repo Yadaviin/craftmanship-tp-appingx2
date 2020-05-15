@@ -1,10 +1,16 @@
 package com.epita.socra.app.tools;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
 * this class handles translations.
 *
 */
-public class Translators {
+public final class Translators {
+
+    private Translators() {
+    }
 
     /**
     * Translates the int given in input to a roman numeral string.
@@ -26,21 +32,24 @@ public class Translators {
     * @param input The roman numeral string that will be translated.
     */
     public static int romanToNumeral(String input) {
-        int[] values = {1000, 500, 100, 50, 10, 5, 1};
-        Character[] romanLiterals = {'M', 'D', 'C', 'L', 'X', 'V', 'I'};
+        Map<Character, Integer> map = new HashMap<Character, Integer>() {{
+                put('M', 1000);
+                put('D', 500);
+                put('C', 100);
+                put('L', 50);
+                put('X', 10);
+                put('V', 5);
+                put('I', 1);
+            }
+        };
 
         int outputNumber = 0;
+        char[] inputArray = input.toCharArray();
         for (int i = 0;  i < input.length(); i++) {
-            boolean isRomanChar = false;
-            for (int j = 0; j < romanLiterals.length; j++) {
-                if (input.toCharArray()[i]  == romanLiterals[j]) {
-                    outputNumber += values[j];
-                    isRomanChar = true;
-                }
-            }
-            if (!isRomanChar) {
+            if (!map.containsKey(inputArray[i])) {
                 return -1;
             }
+            outputNumber += map.get(inputArray[i]);
         }
         return outputNumber;
     }

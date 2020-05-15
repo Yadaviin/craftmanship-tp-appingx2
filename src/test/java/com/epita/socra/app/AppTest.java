@@ -1,10 +1,8 @@
 package com.epita.socra.app;
 
 import com.epita.socra.app.tools.IOAdapter;
-import com.epita.socra.app.tools.Translators;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -16,19 +14,13 @@ import static org.mockito.Mockito.when;
  * Unit test for simple App.
  */
 public class AppTest {
-    /**
-     * Test one to I.
-     */
-    @Test
-    public void given1_WhenRunningMain_ThenCheckOuput() {
-        assertEquals(Translators.numeralToRoman(1), "I");
-    }
+
 
     /**
      * Manage case when user enters nothing.
      */
     @Test
-    public void givenNoInput_WhenRunningMain_ThenCheckOutput() {
+    public void givenNoInput_WhenRunningMain_ThenCheckOutputError() {
         IOAdapter mock = mock(IOAdapter.class);
         when(mock.read()).thenReturn("");
         App app = new App(mock);
@@ -37,50 +29,15 @@ public class AppTest {
     }
 
     /**
-     * Manage case when user enters 5.
+     * Manage case when user enters both text chars and numerals.
      */
     @Test
-    public void given5_WhenRunningMain_ThenCheckOutput() {
-        assertEquals(Translators.numeralToRoman(5), "V");
+    public void givenMix_WhenRunningMain_ThenCheckOutputError() {
+        IOAdapter mock = mock(IOAdapter.class);
+        when(mock.read()).thenReturn("MC231");
+        App app = new App(mock);
+        app.run();
+        verify(mock).write("This is neither a roman nor an arabic number!");
     }
 
-    /**
-     * Manage case when user enters I.
-     */
-    @Test
-    public void givenI_WhenRunningMain_ThenCheckOutput() {
-        assertEquals(Translators.romanToNumeral("I"), 1);
-    }
-
-    /**
-     * Manage case when user enters V.
-     */
-    @Test
-    public void givenV_WhenRunningMain_ThenCheckOutput() {
-        assertEquals(Translators.romanToNumeral("V"), 5);
-    }
-
-    /**
-     * Manage case when user enters X.
-     */
-    @Test
-    public void givenX_WhenRunningMain_ThenCheckOutput() {
-        assertEquals(Translators.romanToNumeral("X"), 10);
-    }
-
-    /**
-     * Manage case when user enters XXI.
-     */
-    @Test
-    public void givenXXI_WhenRunningMain_ThenCheckOutput() {
-        assertEquals(Translators.romanToNumeral("XXI"), 21);
-    }
-
-    /**
-     * Manage case when user enters bogus roman numerals.
-     */
-    @Test
-    public void givenBogus_WhenRunningMain_ThenCheckOutput() {
-        assertEquals(Translators.romanToNumeral("CDZHHF"), -1);
-    }
 }

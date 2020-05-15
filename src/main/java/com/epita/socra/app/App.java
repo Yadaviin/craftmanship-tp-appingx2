@@ -43,6 +43,8 @@ public final class App {
             adapter.write(Translators.numeralToRoman(Integer.parseInt(input)));
         } else if (input.chars().allMatch(Character::isAlphabetic)) {
             adapter.write(String.valueOf(Translators.romanToNumeral(input)));
+        } else {
+            adapter.write("This is neither a roman nor an arabic number!");
         }
 
     }
