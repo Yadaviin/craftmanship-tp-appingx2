@@ -44,4 +44,4 @@ mvn -q exec:java -Dexec.mainClass=com.epita.socra.app.App
 * **Emmanuel Chaffraix** - base file structure and main - [EChaffraix](https://github.com/EChaffraix)
 
 ## Acknowledgments
-oreilly.com pour le regex utilisé pour check les numéros romains.
+* **O'Reilly** - Roman numeral strict Regex - [O'Reilly](oreilly.com)
