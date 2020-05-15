@@ -32,7 +32,9 @@ public final class Translators {
     * @param input The roman numeral string that will be translated.
     */
     public static int romanToNumeral(String input) {
-        Map<Character, Integer> map = new HashMap<Character, Integer>() {{
+        final Map<Character, Integer> map = new HashMap<Character, Integer>() {
+            private static final long serialVersionUID = 7494877805231994531L;
+            {
                 put('M', 1000);
                 put('D', 500);
                 put('C', 100);
@@ -45,11 +47,21 @@ public final class Translators {
 
         int outputNumber = 0;
         char[] inputArray = input.toCharArray();
-        for (int i = 0;  i < input.length(); i++) {
-            if (!map.containsKey(inputArray[i])) {
+        // check for non roman characters
+        for (char inputChar : inputArray) {
+            if (!map.containsKey(inputChar)) {
                 return -1;
             }
-            outputNumber += map.get(inputArray[i]);
+        }
+
+        // translation logic
+        for (int i = 0;  i < input.length(); i++) {
+            // to deduct, condition: suceeding number > current number
+            if (i < input.length() - 1 && map.get(inputArray[i]) < map.get(inputArray[i + 1])) {
+                outputNumber -= map.get(inputArray[i]);
+            } else {
+                outputNumber += map.get(inputArray[i]);
+            }
         }
         return outputNumber;
     }

@@ -35,11 +35,19 @@ public class RomanToNumeralTest {
     }
 
     /**
-     * Manage case when user enters XXI.
+     * Manage a standard addition.
      */
     @Test
     public void givenXXI_WhenTranslating_ThenCheckOutput() {
         assertEquals(21, Translators.romanToNumeral("XXI"));
+    }
+
+    /**
+     * Manage a standard substraction.
+     */
+    @Test
+    public void givenIV_WhenTranslating_ThenCheckOutput() {
+        assertEquals(4, Translators.romanToNumeral("IV"));
     }
 
     /**
