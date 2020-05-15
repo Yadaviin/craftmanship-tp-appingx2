@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Contains read and write, two useful tools for the rest of the code.
- * 
+ *
  * @author Emmanuel Chaffraix
  */
 public class ConsoleAdapter implements IOAdapter {

@@ -5,7 +5,7 @@ package com.epita.socra.app.tools;
 *
 */
 public class Translators {
-    
+
     /**
     * Translates the int given in input to a roman numeral string.
     *

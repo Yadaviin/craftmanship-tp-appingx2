@@ -30,13 +30,14 @@ public final class App {
 
     /**
      * Runs the program.
-     * User is prompted to enter a argument 
+     * User is prompted to enter an argument that is then either translated
+     * from roman to arabic or from arabic to roman.
      */
     public void run() {
         adapter.write("Hello, enter a roman or arabic numeral.");
         String input = adapter.read();
 
-        if (input == "") {
+        if ("".equals(input)) {
             adapter.write("You did not enter a number!");
         } else if (input.chars().allMatch(Character::isDigit)) {
             adapter.write(Translators.numeralToRoman(Integer.parseInt(input)));

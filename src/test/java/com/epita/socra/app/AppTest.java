@@ -1,36 +1,21 @@
 package com.epita.socra.app;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import com.epita.socra.app.tools.IOAdapter;
 import com.epita.socra.app.tools.Translators;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 //import static org.mockito.Answers.valueOf;
 //import static org.mockito.ArgumentMatchers.anyString;
 //import static org.mockito.ArgumentMatchers.argThat;
-
-
 /**
  * Unit test for simple App.
  */
 public class AppTest {
-    /*
-        @Test
-        public void givenAMock_WhenRunningMain_ThenCheckOuputs() {
-            IOAdapter mock = mock(IOAdapter.class);
-            when(mock.read()).thenReturn("TEST");
-            App app = new App(mock);
-            app.run();
-
-            verify(mock).write("Hello, what's your name ?");
-            verify(mock).write(argThat(message -> message.contains("TEST")));
-        }
-    */
-
     /**
      * Test one to I.
      */
