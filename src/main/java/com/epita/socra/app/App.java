@@ -42,7 +42,12 @@ public final class App {
         } else if (input.chars().allMatch(Character::isDigit)) {
             adapter.write(Translators.numeralToRoman(Integer.parseInt(input)));
         } else if (input.chars().allMatch(Character::isAlphabetic)) {
-            adapter.write(String.valueOf(Translators.romanToNumeral(input)));
+            String outputValue = String.valueOf(Translators.romanToNumeral(input));
+            if ("-1".equals(outputValue)) {
+                adapter.write("This is not a proper roman numeral!");
+            } else {
+                adapter.write(outputValue);
+            }
         } else {
             adapter.write("This is neither a roman nor an arabic number!");
         }

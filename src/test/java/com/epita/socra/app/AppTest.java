@@ -37,7 +37,21 @@ public class AppTest {
         when(mock.read()).thenReturn("MC231");
         App app = new App(mock);
         app.run();
+        verify(mock).write("Hello, enter a roman or arabic numeral.");
         verify(mock).write("This is neither a roman nor an arabic number!");
+    }
+
+    /**
+     * Manage case when user enters both text chars and numerals.
+     */
+    @Test
+    public void givenFalseRoman_WhenRunningMain_ThenCheckOutputError() {
+        IOAdapter mock = mock(IOAdapter.class);
+        when(mock.read()).thenReturn("RTFM");
+        App app = new App(mock);
+        app.run();
+        verify(mock).write("Hello, enter a roman or arabic numeral.");
+        verify(mock).write("This is not a proper roman numeral!");
     }
 
 }
